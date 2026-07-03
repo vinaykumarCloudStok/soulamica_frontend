@@ -499,6 +499,7 @@ a:hover > .logo-img {
 }
 .hero__content {
   max-width: 720px;
+  padding: 0px 20px;
 }
 .hero__title {
   font-family: var(--font-display);
@@ -1876,6 +1877,9 @@ a:hover > .logo-img {
   .hero {
     padding-top: 128px;
   }
+  .navbar__inner{
+padding: 0 20px;
+  }
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
@@ -1908,7 +1912,7 @@ a:hover > .logo-img {
   }
   .footer__bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .modal__panel {

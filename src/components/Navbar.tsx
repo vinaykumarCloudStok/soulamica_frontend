@@ -48,7 +48,7 @@ export default function Navbar({ onBookNow, route }: NavbarProps) {
   return (
     <header className={`navbar ${scrolled || route !== '/' ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <a href="#/" className="navbar__brand" onClick={() => setMenuOpen(false)}>
+        <a href="#" className="navbar__brand" onClick={() => setMenuOpen(false)}>
           <img src={LOGO_SRC} alt="Soulamica" className="logo-img navbar__brand-mark" />
           <span>Soulamica</span>
         </a>

@@ -17,7 +17,7 @@ import servicebg from './assets/services-bg.jpg'
 // homepage; About/Blog are dedicated pages (see the router in App.tsx).
 // ---------------------------------------------------------------------------
 export const NAV_LINKS: NavLink[] = [
-  { id: 'home', label: 'Home', href: '#/' },
+  { id: 'home', label: 'Home', href: '#' },
   { id: 'welcome', label: 'Welcome', href: '#welcome' },
   { id: 'services', label: 'Services', href: '#services' },
   { id: 'about', label: 'About', href: '#/about' },
