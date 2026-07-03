@@ -1,16 +1,9 @@
-import { MessageCircle, Users, Phone, HeartHandshake, Users2, MapPin, ArrowRight, type LucideIcon } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { SERVICES, SERVICES_BG_SRC } from '../data';
-import type { Service, ServiceIcon } from '../types';
+import type { Service } from '../types';
 import { useScrollReveal, useTilt } from '../hooks';
 
-const ICONS: Record<ServiceIcon, LucideIcon> = {
-  chat: MessageCircle,
-  workshop: Users,
-  phone: Phone,
-  care: HeartHandshake,
-  family: Users2,
-  inperson: MapPin,
-};
+
 
 interface ServicesProps {
   onBookNow: (serviceName: string) => void;
@@ -53,7 +46,7 @@ function ServiceCard({
   visible: boolean;
   onBookNow: (name: string) => void;
 }) {
-  const Icon = ICONS[service.icon];
+
   const tiltRef = useTilt<HTMLElement>(6);
   return (
     <article
@@ -62,7 +55,7 @@ function ServiceCard({
       style={{ transitionDelay: visible ? `${(index % 3) * 90}ms` : '0ms' }}
     >
       <div className="service-card__icon">
-        <Icon size={22} strokeWidth={1.6} />
+        <img src={service.icon} alt="" />
       </div>
       <h3 className="service-card__name">{service.name}</h3>
       <p className="service-card__desc">{service.description}</p>

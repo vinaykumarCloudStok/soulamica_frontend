@@ -1,5 +1,10 @@
 import type { NavLink, Service, BlogPost, SocialLink, Stat, LegalDoc } from './types';
-
+import s1 from './assets/s1.png'
+import s2 from './assets/s2.png'
+import s3 from './assets/s3.jpg'
+import s4 from './assets/s4.png'
+import s5 from './assets/s5.png'
+import s6 from './assets/s6.png'
 // ---------------------------------------------------------------------------
 // Site navigation. Home/Welcome/Services are same-page scroll anchors on the
 // homepage; About/Blog are dedicated pages (see the router in App.tsx).
@@ -52,35 +57,35 @@ export const SERVICES: Service[] = [
     name: 'Individual Therapy Session',
     price: '₹1,500',
     description: 'One-on-one online sessions, paced entirely around you.',
-    icon: 'chat',
+    icon: s1,
   },
   {
     id: 'workshops',
     name: 'School & Corporate Workshops',
     price: 'On Request',
     description: 'Mental health workshops built for schools, teams and organisations.',
-    icon: 'workshop',
+    icon: s2,
   },
   {
     id: 'phone',
     name: 'Phone Consultation',
     price: '₹500',
     description: 'A shorter, voice-only check-in for when you just need to talk.',
-    icon: 'phone',
+    icon: s3,
   },
   {
     id: 'probono',
     name: 'Pro Bono Therapy',
     price: 'Price Negotiable',
     description: 'Accessible, income-sensitive support for those who need it most.',
-    icon: 'care',
+    icon: s4,
   },
   {
     id: 'family',
     name: 'Family / Couple Therapy (Online)',
     price: '₹2,500',
     description: 'Guided, judgment-free conversations for partners and families.',
-    icon: 'family',
+    icon: s5,
   },
   {
     id: 'inperson',
@@ -88,7 +93,7 @@ export const SERVICES: Service[] = [
     price: '₹2,500',
     priceNote: 'From',
     description: 'Meet face-to-face for a session, at a space that feels right.',
-    icon: 'inperson',
+    icon: s6,
   },
 ];
 

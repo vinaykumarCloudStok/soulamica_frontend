@@ -18,7 +18,7 @@ export interface Service {
   price: string;
   priceNote?: string;
   description: string;
-  icon: ServiceIcon;
+  icon: string;
 }
 
 export interface BlogPost {
