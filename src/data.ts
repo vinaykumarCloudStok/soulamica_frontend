@@ -8,6 +8,10 @@ import s6 from './assets/s6.png'
 import l1 from './assets/li1.png'
 import l2 from './assets/li2.png'
 import l3 from './assets/li3.png'
+import logo from './assets/logo.png'
+import hero from './assets/hero-photo.jpg'
+import port from './assets/portrait-placeholder.svg'
+import servicebg from './assets/services-bg.jpg'
 // ---------------------------------------------------------------------------
 // Site navigation. Home/Welcome/Services are same-page scroll anchors on the
 // homepage; About/Blog are dedicated pages (see the router in App.tsx).
@@ -49,10 +53,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 // Real image files in /public — replace these files directly (keep the same
 // names) to swap in your own logo and photo without touching any component.
-export const LOGO_SRC = '/logo.svg';
-export const PORTRAIT_SRC = '/portrait-placeholder.svg';
-export const HERO_PHOTO_SRC = '/hero-photo.jpg';
-export const SERVICES_BG_SRC = '/services-bg.jpg';
+export const LOGO_SRC = logo;
+export const PORTRAIT_SRC = port;
+export const HERO_PHOTO_SRC = hero;
+export const SERVICES_BG_SRC = servicebg;
 
 export const SERVICES: Service[] = [
   {

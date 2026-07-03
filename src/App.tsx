@@ -8,6 +8,7 @@ import LegalPage from './components/LegalPage';
 import NotFoundPage from './components/NotFoundPage';
 import ContactModal from './components/ContactModal';
 import Footer from './components/Footer';
+import LetsChat from './components/LetsChat';
 import { useScrollProgress, useRoute, useRouteScroll } from './hooks';
 import { LEGAL_DOCS } from './data';
 
@@ -56,6 +57,8 @@ export default function App() {
       <main>{renderPage()}</main>
 
       <Footer onBookNow={() => openContact()} />
+
+      <LetsChat />
 
       <ContactModal open={contactOpen} service={selectedService} onClose={closeContact} />
     </>

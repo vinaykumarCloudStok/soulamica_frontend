@@ -54,20 +54,23 @@ function ServiceCard({
       className={`service-card reveal ${visible ? 'reveal--visible' : ''}`}
       style={{ transitionDelay: visible ? `${(index % 3) * 90}ms` : '0ms' }}
     >
-      <div className="service-card__icon">
+      <div className="service-card__media">
         <img src={service.icon} alt="" />
       </div>
-      <h3 className="service-card__name">{service.name}</h3>
-      <p className="service-card__desc">{service.description}</p>
 
-      <div className="service-card__price">
-        {service.priceNote && <span className="service-card__price-note">{service.priceNote}</span>}
-        <span className="service-card__price-value">{service.price}</span>
+      <div className="service-card__body">
+        <h3 className="service-card__name">{service.name}</h3>
+        <p className="service-card__desc">{service.description}</p>
+
+        <div className="service-card__price">
+          {service.priceNote && <span className="service-card__price-note">{service.priceNote}</span>}
+          <span className="service-card__price-value">{service.price}</span>
+        </div>
+
+        <button type="button" className="btn btn--outline service-card__cta" onClick={() => onBookNow(service.name)}>
+          Book Now <ArrowRight size={16} />
+        </button>
       </div>
-
-      <button type="button" className="btn btn--outline service-card__cta" onClick={() => onBookNow(service.name)}>
-        Book Now <ArrowRight size={16} />
-      </button>
     </article>
   );
 }

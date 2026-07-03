@@ -44,7 +44,7 @@
   /* Layout ------------------------------------------------------------------ */
   --container-w: 1180px;
   --gutter: clamp(20px, 5vw, 64px);
-  --nav-h: 84px;
+  --nav-h: 78px;
 }
 
 /* --------------------------------------------------------------------------
@@ -302,8 +302,8 @@ section[id] {
    Logo image (navbar / footer / welcome divider)
    -------------------------------------------------------------------------- */
 .logo-img {
-  width: 34px;
-  height: 34px;
+ width: 40px;
+  height: 38px;
   display: block;
   transition: transform var(--dur-base) var(--ease-spring);
 }
@@ -368,8 +368,8 @@ a:hover > .logo-img {
   flex-shrink: 0;
 }
 .navbar__brand-mark {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 38px;
 }
 .navbar__links {
   display: flex;
@@ -442,6 +442,23 @@ a:hover > .logo-img {
   to {
     opacity: 1;
   }
+}
+
+/* Transparent state, over the hero: the dark scrim behind the navbar means
+   dark ink/plum text has almost no contrast, so swap to light text here.
+   Once .navbar--scrolled adds its solid paper background, the base dark
+   colors above take over again. */
+.navbar:not(.navbar--scrolled) .navbar__brand,
+.navbar:not(.navbar--scrolled) .navbar__link,
+.navbar:not(.navbar--scrolled) .navbar__link--active,
+.navbar:not(.navbar--scrolled) .navbar__menu-btn {
+  color: var(--paper);
+}
+.navbar:not(.navbar--scrolled) .navbar__link:hover {
+  color: var(--marigold);
+}
+.navbar:not(.navbar--scrolled) .navbar__menu-btn:hover {
+  background: rgba(var(--paper-rgb), 0.14);
 }
 
 /* ==========================================================================
@@ -547,7 +564,7 @@ a:hover > .logo-img {
   text-align: center;
 }
 .welcome__mark {
-  width: 58px;
+  width: 65px;
   height: 58px;
   margin: 0 auto 38px;
   opacity: 0.92;
@@ -608,7 +625,7 @@ a:hover > .logo-img {
   background: var(--card);
   border: 1px solid rgba(var(--ink-rgb), 0.07);
   border-radius: var(--r-lg);
-  padding: 32px 28px;
+  overflow: hidden;
   transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(var(--lift));
   transition: transform 150ms var(--ease), box-shadow var(--dur-base) var(--ease),
     border-color var(--dur-base) var(--ease);
@@ -618,20 +635,28 @@ a:hover > .logo-img {
   box-shadow: var(--shadow-lg);
   border-color: rgba(226, 166, 59, 0.5);
 }
-.service-card__icon {
+.service-card__media {
   width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
+  overflow: hidden;
   background: rgba(124, 138, 110, 0.15);
-  color: var(--sage-deep);
-  margin-bottom: 20px;
-  transition: transform var(--dur-base) var(--ease-spring);
 }
-.service-card:hover .service-card__icon {
-  transform: scale(1.08) rotate(-4deg);
+.service-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--dur-slow) var(--ease-spring);
+}
+.service-card:hover .service-card__media img {
+  transform: scale(1.07);
+}
+.service-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 26px 28px 28px;
 }
 .service-card__name {
   font-family: var(--font-display);
@@ -1678,6 +1703,86 @@ a:hover > .logo-img {
 }
 
 /* ==========================================================================
+   Let's Chat (floating WhatsApp launcher)
+   ========================================================================== */
+.lets-chat {
+  position: fixed;
+  right: clamp(16px, 4vw, 32px);
+  bottom: clamp(16px, 4vw, 32px);
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  padding: 6px 22px 6px 6px;
+  border-radius: var(--r-full);
+  background: var(--card);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  box-shadow: var(--shadow-lg);
+  animation: lets-chat-in 640ms var(--ease-spring) 1100ms both;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-base) var(--ease);
+}
+.lets-chat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(var(--ink-rgb), 0.22);
+}
+.lets-chat:active {
+  transform: translateY(-1px) scale(0.97);
+}
+.lets-chat__bubble {
+  position: relative;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sage-deep);
+  color: var(--paper);
+}
+.lets-chat__bubble svg {
+  position: relative;
+  z-index: 1;
+}
+.lets-chat__ping {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 50%;
+  background: var(--sage);
+  animation: lets-chat-ping 2.4s ease-out infinite;
+}
+.lets-chat__label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+@keyframes lets-chat-ping {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  75%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes lets-chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 960px) {
@@ -1702,6 +1807,17 @@ a:hover > .logo-img {
   }
   .navbar__link {
     font-size: 1.05rem;
+  }
+  /* The slide-out panel always has a solid --card background of its own, even
+     when the top bar is in its transparent, light-text hero state — so its
+     links must stay dark regardless. #primary-nav outranks the light-text
+     override above without needing !important. */
+  #primary-nav .navbar__link {
+    color: var(--plum);
+  }
+  #primary-nav .navbar__link:hover,
+  #primary-nav .navbar__link--active {
+    color: var(--ink);
   }
   .navbar__cta--desktop {
     display: none;
@@ -1797,5 +1913,17 @@ a:hover > .logo-img {
 
   .modal__panel {
     padding: 40px 22px 30px;
+  }
+
+  .lets-chat {
+    gap: 10px;
+    padding: 5px 18px 5px 5px;
+  }
+  .lets-chat__bubble {
+    width: 44px;
+    height: 44px;
+  }
+  .lets-chat__label {
+    font-size: 0.86rem;
   }
 }
