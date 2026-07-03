@@ -14,6 +14,7 @@ export default function PageHeader({ eyebrow, title, subtitle, meta }: PageHeade
         <a href="#/" className="page-header__back">
           <ArrowLeft size={15} /> Back to home
         </a>
+        <br />
         <p className="eyebrow eyebrow--light">{eyebrow}</p>
         <h1 className="page-header__title">{title}</h1>
         {subtitle && <p className="page-header__subtitle">{subtitle}</p>}

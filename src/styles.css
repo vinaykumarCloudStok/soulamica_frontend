@@ -1,6 +1,6 @@
 /* ==========================================================================
    SOULAMICA — Design tokens & global styles
-   Palette: warm plum-ink + linen-blush paper + marigold + sage
+   Palette: teal-ink (from brand logo) + linen paper + sage
    Type: Fraunces (display) + Manrope (body)
    ========================================================================== */
 
@@ -8,17 +8,17 @@
   color-scheme: light;
 
   /* Color -------------------------------------------------------------- */
-  --ink: #2a1b2e;
-  --plum: #6b3f52;
-  --plum-deep: #4a2338;
+  --ink: #1b2a2c;
+  --teal: #4cb0bd;
+  --teal-deep: #3694a1;
+  --teal-shade: #3d666c;
+  --teal-shade-deep: #224449;
   --paper: #f6ece8;
   --paper-deep: #efe0db;
   --card: #fffcf9;
-  --marigold: #e2a63b;
-  --marigold-deep: #c98b22;
   --sage: #7c8a6e;
   --sage-deep: #64715a;
-  --ink-rgb: 42, 27, 46;
+  --ink-rgb: 27, 42, 44;
   --paper-rgb: 246, 236, 232;
 
   /* Type ----------------------------------------------------------------- */
@@ -42,7 +42,7 @@
   --dur-slow: 620ms;
 
   /* Layout ------------------------------------------------------------------ */
-  --container-w: 1180px;
+  --container-w: 1280px;
   --gutter: clamp(20px, 5vw, 64px);
   --nav-h: 78px;
 }
@@ -116,7 +116,7 @@ section[id] {
 }
 
 ::selection {
-  background: var(--marigold);
+  background: var(--teal);
   color: var(--ink);
 }
 
@@ -127,7 +127,7 @@ section[id] {
   background: var(--paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--plum);
+  background: var(--teal-shade);
   border-radius: 10px;
   border: 3px solid var(--paper);
 }
@@ -136,7 +136,7 @@ section[id] {
   outline: none;
 }
 :focus-visible {
-  outline: 2px solid var(--marigold-deep);
+  outline: 2px solid var(--teal-deep);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -147,7 +147,7 @@ section[id] {
 .container {
   max-width: var(--container-w);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+
 }
 
 .eyebrow {
@@ -159,7 +159,7 @@ section[id] {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--plum);
+  color: var(--teal-shade);
   margin-bottom: 14px;
 }
 .eyebrow--center {
@@ -167,7 +167,7 @@ section[id] {
   width: 100%;
 }
 .eyebrow--light {
-  color: var(--marigold);
+  color: var(--teal);
 }
 
 .section-head {
@@ -188,7 +188,7 @@ section[id] {
 .section-subtitle {
   font-size: 1.05rem;
   line-height: 1.65;
-  color: var(--plum);
+  color: var(--teal-shade);
   max-width: 52ch;
 }
 
@@ -256,23 +256,23 @@ section[id] {
 }
 
 .btn--primary {
-  background: var(--marigold);
+  background: var(--teal);
   color: var(--ink);
   box-shadow: var(--shadow-sm);
 }
 .btn--primary:hover {
-  background: var(--marigold-deep);
+  background: var(--teal-deep);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--plum);
-  border-color: var(--plum);
+  color: var(--teal-shade);
+  border-color: var(--teal-shade);
 }
 .btn--outline:hover {
-  background: var(--plum);
+  background: var(--teal-shade);
   color: var(--card);
   transform: translateY(-2px);
 }
@@ -282,7 +282,7 @@ section[id] {
   color: var(--paper);
 }
 .btn--dark:hover {
-  background: var(--plum-deep);
+  background: var(--teal-shade-deep);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -326,7 +326,7 @@ a:hover > .logo-img {
 }
 .scroll-progress__bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--marigold), var(--plum) 55%, var(--sage));
+  background: linear-gradient(90deg, var(--teal), var(--teal-shade) 55%, var(--sage));
   transition: width 120ms linear;
 }
 
@@ -381,7 +381,7 @@ a:hover > .logo-img {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.94rem;
-  color: var(--plum);
+  color: var(--teal-shade);
   padding: 6px 0;
   transition: color var(--dur-fast) var(--ease);
 }
@@ -392,7 +392,7 @@ a:hover > .logo-img {
   right: 100%;
   bottom: -2px;
   height: 2px;
-  background: var(--marigold);
+  background: var(--teal);
   border-radius: 2px;
   transition: right var(--dur-base) var(--ease);
 }
@@ -445,7 +445,7 @@ a:hover > .logo-img {
 }
 
 /* Transparent state, over the hero: the dark scrim behind the navbar means
-   dark ink/plum text has almost no contrast, so swap to light text here.
+   dark ink/teal-shade text has almost no contrast, so swap to light text here.
    Once .navbar--scrolled adds its solid paper background, the base dark
    colors above take over again. */
 .navbar:not(.navbar--scrolled) .navbar__brand,
@@ -455,7 +455,7 @@ a:hover > .logo-img {
   color: var(--paper);
 }
 .navbar:not(.navbar--scrolled) .navbar__link:hover {
-  color: var(--marigold);
+  color: var(--teal);
 }
 .navbar:not(.navbar--scrolled) .navbar__menu-btn:hover {
   background: rgba(var(--paper-rgb), 0.14);
@@ -511,7 +511,7 @@ a:hover > .logo-img {
 }
 .hero__title em {
   font-style: italic;
-  color: var(--marigold);
+  color: var(--teal);
 }
 .hero__subtitle {
   font-size: 1.1rem;
@@ -555,7 +555,7 @@ a:hover > .logo-img {
    Welcome
    ========================================================================== */
 .welcome {
-  padding: clamp(80px, 12vw, 132px) 0;
+  padding: 16px 20px;
   background: var(--paper);
 }
 .welcome__inner {
@@ -581,7 +581,7 @@ a:hover > .logo-img {
   font-family: var(--font-body);
   font-weight: 500;
   font-size: clamp(1.02rem, 1.6vw, 1.15rem);
-  color: var(--plum);
+  color: var(--teal-shade);
   margin-bottom: 0;
 }
 
@@ -591,7 +591,7 @@ a:hover > .logo-img {
 .services {
   position: relative;
   overflow: hidden;
-  padding: clamp(80px, 12vw, 132px) 0;
+  padding:40px 20px;
   background: var(--paper);
 }
 .services__bg {
@@ -633,7 +633,7 @@ a:hover > .logo-img {
 .service-card:hover {
   --lift: -6px;
   box-shadow: var(--shadow-lg);
-  border-color: rgba(226, 166, 59, 0.5);
+  border-color: rgba(76, 176, 189, 0.5);
 }
 .service-card__media {
   width: 100%;
@@ -669,7 +669,7 @@ a:hover > .logo-img {
 .service-card__desc {
   font-size: 0.92rem;
   line-height: 1.6;
-  color: var(--plum);
+  color: var(--teal-shade);
   margin-bottom: 20px;
 }
 .service-card__price {
@@ -682,7 +682,7 @@ a:hover > .logo-img {
 }
 .service-card__price-note {
   font-size: 0.82rem;
-  color: var(--plum);
+  color: var(--teal-shade);
 }
 .service-card__price-value {
   font-family: var(--font-display);
@@ -701,7 +701,7 @@ a:hover > .logo-img {
 .about {
   position: relative;
   overflow: hidden;
-  padding: clamp(80px, 12vw, 132px) 0;
+  padding: 16px 20px;
   background: var(--ink);
 }
 .about__grid {
@@ -726,7 +726,7 @@ a:hover > .logo-img {
   border-radius: 50%;
   padding: 6px;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--plum), var(--marigold));
+  background: linear-gradient(135deg, var(--teal-shade), var(--teal));
   transition: transform var(--dur-slow) var(--ease-spring), box-shadow var(--dur-base) var(--ease);
 }
 .about__portrait:hover .about__portrait-frame {
@@ -769,7 +769,7 @@ a:hover > .logo-img {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.92rem;
-  color: var(--marigold);
+  color: var(--teal);
   padding: 6px 0;
   transition: gap var(--dur-fast) var(--ease);
 }
@@ -793,7 +793,7 @@ a:hover > .logo-img {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 2rem;
-  color: var(--marigold);
+  color: var(--teal);
 }
 .about__stat-label {
   font-size: 0.82rem;
@@ -804,7 +804,7 @@ a:hover > .logo-img {
    Insights (blog)
    ========================================================================== */
 .insights {
-  padding: clamp(80px, 12vw, 132px) 0;
+  padding: 40px 20px;
   background: var(--paper-deep);
 }
 .insights__grid {
@@ -838,7 +838,7 @@ a:hover > .logo-img {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(180deg, rgba(42, 27, 46, 0) 55%, rgba(42, 27, 46, 0.22) 100%);
+  background-image: linear-gradient(180deg, rgba(27, 42, 44, 0) 55%, rgba(27, 42, 44, 0.22) 100%);
 }
 .insight-card__img {
   width: 100%;
@@ -864,7 +864,7 @@ a:hover > .logo-img {
 .insight-card__excerpt {
   font-size: 0.92rem;
   line-height: 1.6;
-  color: var(--plum);
+  color: var(--teal-shade);
   margin-bottom: 16px;
 }
 .insight-card__author {
@@ -878,8 +878,8 @@ a:hover > .logo-img {
    Closing CTA
    ========================================================================== */
 .closing-cta {
-  padding: clamp(64px, 9vw, 92px) 0;
-  background: var(--marigold);
+  padding:16px 20px;
+  background: var(--teal);
 }
 .closing-cta__inner {
   text-align: center;
@@ -996,8 +996,8 @@ a:hover > .logo-img {
 }
 .modal__chip {
   display: inline-block;
-  background: rgba(226, 166, 59, 0.18);
-  color: var(--plum);
+  background: rgba(76, 176, 189, 0.18);
+  color: var(--teal-shade);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 6px 14px;
@@ -1007,7 +1007,7 @@ a:hover > .logo-img {
 .modal__subtitle {
   font-size: 0.96rem;
   line-height: 1.6;
-  color: var(--plum);
+  color: var(--teal-shade);
   margin-bottom: 26px;
 }
 .modal__actions {
@@ -1029,8 +1029,8 @@ a:hover > .logo-img {
     transform var(--dur-fast) var(--ease);
 }
 .modal__contact-row:hover {
-  border-color: var(--marigold);
-  background: rgba(226, 166, 59, 0.07);
+  border-color: var(--teal);
+  background: rgba(76, 176, 189, 0.07);
   transform: translateX(3px);
 }
 .modal__contact-row--whatsapp:hover {
@@ -1064,7 +1064,7 @@ a:hover > .logo-img {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--plum);
+  color: var(--teal-shade);
 }
 .modal__contact-value {
   font-family: var(--font-display);
@@ -1091,7 +1091,7 @@ a:hover > .logo-img {
 }
 .modal__row-arrow {
   flex-shrink: 0;
-  color: var(--plum);
+  color: var(--teal-shade);
 }
 .modal__social {
   display: flex;
@@ -1105,7 +1105,7 @@ a:hover > .logo-img {
 }
 .modal__social-label {
   font-size: 0.86rem;
-  color: var(--plum);
+  color: var(--teal-shade);
 }
 .modal__social-icons {
   display: flex;
@@ -1136,7 +1136,7 @@ a:hover > .logo-img {
 .footer {
   background: var(--ink);
   color: var(--paper);
-  padding: 88px 0 0;
+  padding: 16px 20px;
 }
 .footer__grid {
   display: grid;
@@ -1178,7 +1178,7 @@ a:hover > .logo-img {
   transition: border-color var(--dur-fast) var(--ease);
 }
 .footer__form-row:focus-within {
-  border-color: var(--marigold);
+  border-color: var(--teal);
 }
 .footer__input {
   flex: 1;
@@ -1197,13 +1197,13 @@ a:hover > .logo-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--marigold);
+  background: var(--teal);
   color: var(--ink);
   cursor: pointer;
   transition: background var(--dur-fast) var(--ease);
 }
 .footer__submit:hover {
-  background: var(--marigold-deep);
+  background: var(--teal-deep);
 }
 .footer__form-msg {
   margin-top: 10px;
@@ -1233,7 +1233,7 @@ a:hover > .logo-img {
   transition: color var(--dur-fast) var(--ease);
 }
 .footer__contact-link:hover {
-  color: var(--marigold);
+  color: var(--teal);
 }
 .footer__cta {
   margin: 8px 0 22px;
@@ -1255,8 +1255,8 @@ a:hover > .logo-img {
     border-color var(--dur-fast) var(--ease);
 }
 .footer__social-icon:hover {
-  background: var(--marigold);
-  border-color: var(--marigold);
+  background: var(--teal);
+  border-color: var(--teal);
   color: var(--ink);
   transform: translateY(-3px);
 }
@@ -1273,7 +1273,7 @@ a:hover > .logo-img {
   width: fit-content;
 }
 .footer__nav a:hover {
-  color: var(--marigold);
+  color: var(--teal);
 }
 .footer__bottom {
   display: flex;
@@ -1319,7 +1319,7 @@ a:hover > .logo-img {
   transition: color var(--dur-fast) var(--ease), gap var(--dur-fast) var(--ease);
 }
 .page-header__back:hover {
-  color: var(--marigold);
+  color: var(--teal);
   gap: 11px;
 }
 .page-header__back--light {
@@ -1394,12 +1394,12 @@ a:hover > .logo-img {
 }
 .about-page__stat-label {
   font-size: 0.82rem;
-  color: var(--plum);
+  color: var(--teal-shade);
 }
 .about-page__bio p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--plum);
+  color: var(--teal-shade);
   max-width: 68ch;
   margin-bottom: 20px;
 }
@@ -1430,7 +1430,7 @@ a:hover > .logo-img {
   margin-top: 4px;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--marigold-deep);
+  color: var(--teal-deep);
 }
 
 /* Homepage "Latest Insights" header row with the new View all posts link */
@@ -1451,7 +1451,7 @@ a:hover > .logo-img {
   text-decoration: none;
   font-weight: 700;
   font-size: 0.92rem;
-  color: var(--plum);
+  color: var(--teal-shade);
   padding-bottom: 6px;
   transition: color var(--dur-fast) var(--ease);
 }
@@ -1528,7 +1528,7 @@ a:hover > .logo-img {
 .blog-post__note {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--plum);
+  color: var(--teal-shade);
   background: var(--paper-deep);
   border-radius: var(--r-md);
   padding: 16px 20px;
@@ -1587,7 +1587,7 @@ a:hover > .logo-img {
    Legal pages (Terms / Privacy / Refund Policy / Accessibility)
    ========================================================================== */
 .legal-page {
-  padding: clamp(64px, 9vw, 96px) 0 clamp(80px, 10vw, 120px);
+  padding: 16px 20px;
   background: var(--paper);
 }
 .legal-page__grid {
@@ -1610,12 +1610,12 @@ a:hover > .logo-img {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--plum);
+  color: var(--teal-shade);
   margin-bottom: 4px;
 }
 .legal-page__toc a {
   font-size: 0.86rem;
-  color: var(--plum);
+  color: var(--teal-shade);
   text-decoration: none;
   line-height: 1.5;
   transition: color var(--dur-fast) var(--ease);
@@ -1649,13 +1649,13 @@ a:hover > .logo-img {
 .legal-page__section p {
   font-size: 0.98rem;
   line-height: 1.75;
-  color: var(--plum);
+  color: var(--teal-shade);
   margin-bottom: 12px;
 }
 .legal-page__crisis {
   margin-top: 18px;
   background: var(--card);
-  border: 1px solid rgba(226, 166, 59, 0.4);
+  border: 1px solid rgba(76, 176, 189, 0.4);
   border-radius: var(--r-md);
   padding: 18px 20px;
   display: flex;
@@ -1671,8 +1671,8 @@ a:hover > .logo-img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(226, 166, 59, 0.16);
-  color: var(--marigold-deep);
+  background: rgba(76, 176, 189, 0.16);
+  color: var(--teal-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1686,7 +1686,7 @@ a:hover > .logo-img {
 }
 .legal-page__crisis-row span {
   font-size: 0.85rem;
-  color: var(--plum);
+  color: var(--teal-shade);
 }
 
 /* ==========================================================================
@@ -1813,7 +1813,7 @@ a:hover > .logo-img {
      links must stay dark regardless. #primary-nav outranks the light-text
      override above without needing !important. */
   #primary-nav .navbar__link {
-    color: var(--plum);
+    color: var(--teal-shade);
   }
   #primary-nav .navbar__link:hover,
   #primary-nav .navbar__link--active {
