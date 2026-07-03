@@ -555,7 +555,7 @@ a:hover > .logo-img {
    Welcome
    ========================================================================== */
 .welcome {
-  padding: 16px 20px;
+  padding: 40px 20px;
   background: var(--paper);
 }
 .welcome__inner {
@@ -701,7 +701,7 @@ a:hover > .logo-img {
 .about {
   position: relative;
   overflow: hidden;
-  padding: 16px 20px;
+  padding: 40px 20px;
   background: var(--ink);
 }
 .about__grid {
@@ -878,7 +878,7 @@ a:hover > .logo-img {
    Closing CTA
    ========================================================================== */
 .closing-cta {
-  padding:16px 20px;
+  padding:40px 20px;
   background: var(--teal);
 }
 .closing-cta__inner {
@@ -1136,7 +1136,7 @@ a:hover > .logo-img {
 .footer {
   background: var(--ink);
   color: var(--paper);
-  padding: 16px 20px;
+  padding: 40px 20px;
 }
 .footer__grid {
   display: grid;
@@ -1305,7 +1305,7 @@ a:hover > .logo-img {
    ========================================================================== */
 .page-header {
   background: var(--ink);
-  padding: clamp(140px, 18vw, 180px) 0 clamp(56px, 8vw, 80px);
+  padding: 120px 20px 40px 20px;
 }
 .page-header__back {
   display: inline-flex;
