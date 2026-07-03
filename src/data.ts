@@ -5,6 +5,9 @@ import s3 from './assets/s3.jpg'
 import s4 from './assets/s4.png'
 import s5 from './assets/s5.png'
 import s6 from './assets/s6.png'
+import l1 from './assets/li1.png'
+import l2 from './assets/li2.png'
+import l3 from './assets/li3.png'
 // ---------------------------------------------------------------------------
 // Site navigation. Home/Welcome/Services are same-page scroll anchors on the
 // homepage; About/Blog are dedicated pages (see the router in App.tsx).
@@ -104,7 +107,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "In today's fast-paced world, looking after your mental health matters more than ever — a few small, consistent habits go a long way.",
     author: 'Richa Gupta',
-    image: '/card-wellness.jpg',
+    image: l2,
   },
   {
     id: 'understanding-therapy',
@@ -112,7 +115,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       'Therapy can feel like a big first step. Here is a plain-language look at what it actually involves, and how to know if it is right for you.',
     author: 'Richa Gupta',
-    image: '/card-therapy.jpg',
+    image:l3,
   },
   {
     id: 'mental-health-resilience',
@@ -120,7 +123,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       'Life throws the unexpected at all of us. These are grounded, everyday techniques for building resilience before you need it.',
     author: 'Richa Gupta',
-    image: '/card-resilience.jpg',
+    image: l1,
   },
 ];
 
