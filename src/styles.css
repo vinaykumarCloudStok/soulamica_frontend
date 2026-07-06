@@ -638,9 +638,9 @@ a:hover > .logo-img {
 }
 .service-card__media {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 305px;
   flex-shrink: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: rgba(124, 138, 110, 0.15);
 }
 .service-card__media img {
@@ -657,7 +657,7 @@ a:hover > .logo-img {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 26px 28px 28px;
+  padding: 16px;
 }
 .service-card__name {
   font-family: var(--font-display);
@@ -831,7 +831,7 @@ a:hover > .logo-img {
 }
 .insight-card__band {
   position: relative;
-  height: 172px;
+  height: auto;
   overflow: hidden;
   background: var(--paper-deep);
 }
@@ -852,7 +852,7 @@ a:hover > .logo-img {
   transform: scale(1.07);
 }
 .insight-card__body {
-  padding: 26px 26px 28px;
+  padding: 16px;
 }
 .insight-card__title {
   font-family: var(--font-display);
@@ -1912,7 +1912,7 @@ padding: 0 20px;
   }
   .footer__bottom {
     flex-direction: column;
-    align-items: center;
+    align-items:flex-start;
   }
 
   .modal__panel {
